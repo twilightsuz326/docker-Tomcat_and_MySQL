@@ -1,0 +1,5 @@
+FROM tomcat:9.0.58-jdk11-openjdk-buster
+RUN apt-get update && apt-get install -y wget
+WORKDIR /usr/local/tomcat/webapps/
+# COPY sample.war ./
+# RUN wget http://tomcat.apache.org/tomcat-8.5-doc/appdev/sample/sample.war
