@@ -1,2 +1,3 @@
 /build/
 docker/webapps/
+docker-compose.yml

@@ -12,7 +12,7 @@ services:
       - ./webapps:/usr/local/tomcat/webapps
       
   mysql:
-    build: ./mysql/    #Dockerfileからビルドすることを示す
+    build: ./mysql/    #Dockerfileからビルドすることを示す 
     volumes:
       - ./mysql/db:/docker-entrypoint-initdb.d  #初期データをマウントする場所
     image: original_mysql_world # イメージの名前
