@@ -10,11 +10,20 @@ services:
       - 8080:8080
     volumes:
       - ./webapps:/usr/local/tomcat/webapps
+    networks:
+      - net1
       
   mysql:
     build: ./mysql/    #Dockerfileからビルドすることを示す 
     volumes:
       - ./mysql/db:/docker-entrypoint-initdb.d  #初期データをマウントする場所
     image: original_mysql_world # イメージの名前
+    ports:
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=****   #コンテナ内のMySQLを起動する際のパスワードを設定
+    networks:
+      - net1
+
+networks:
+  net1:
