@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./tomcat/Dockerfile1
-    container_name: tomcat
+    container_name: docker_tomcat9_jre17
     ports:
       - 8080:8080
     volumes:
@@ -17,6 +17,7 @@ services:
     build: ./mysql/    #Dockerfileからビルドすることを示す 
     volumes:
       - ./mysql/db:/docker-entrypoint-initdb.d  #初期データをマウントする場所
+    container_name: docker_mysql
     image: original_mysql_world # イメージの名前
     ports:
       - "3306:3306"
