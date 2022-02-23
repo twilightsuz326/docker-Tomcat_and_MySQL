@@ -45,6 +45,12 @@ CREATE TABLE `city` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+-- localhostのみ許可だとdocker Windows -> Linux へ接続できないので全許可へ。
+CREATE USER 'DBA'@'%' IDENTIFIED BY 'password';
+GRANT SELECT on world.* to 'DBA'@'%';
+GRANT INSERT on world.* to 'DBA'@'%';
+GRANT UPDATE on world.* to 'DBA'@'%';
+
 --
 -- Dumping data for table `city`
 --
